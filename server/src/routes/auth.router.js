@@ -4,6 +4,8 @@ const { refresh } = require('../../config/cookiesConfig');
 const bcrypt = require('bcrypt');
 const generateToken = require('../../utils/generateToken');
 
+
+//Добавить пользователя
 router.post('/registration', async (req, res) => {
   try {
     const { login, email, password } = req.body
@@ -38,6 +40,7 @@ router.post('/registration', async (req, res) => {
   }
 })
 
+//Войти в личный кабинет
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body
@@ -49,7 +52,7 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({ where: { email }})
     if (!user) {
       return res.status(400).json({
-        message: `Пользователь с почтой ${email} не найден`
+        message: `Пользователь c почтой ${email} не найден`
       })
     }
     console.log("user:", user)
@@ -77,6 +80,7 @@ router.post('/login', async (req, res) => {
   }
 })
 
+//Выйти из личного кабинета
 router.get('/logout', (req, res) => {
   try {
     res.clearCookie('refreshToken').sendStatus(200);

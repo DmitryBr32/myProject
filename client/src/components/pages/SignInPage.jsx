@@ -31,9 +31,9 @@ export default function SignInPage({ prop, setUser }) {
       console.log('res:', res, prop);
       setAuthInputs(initValue);
       setAccessToken(res.data.accessToken);
-      setUser(res.data.user.login);
+      setUser(res.data.user);
       setErr('');
-      navigate('/');
+      navigate('/moodboard');
     } catch (error) {
       console.log(error, 'что-то здесь не так');
       setErr(error.response.data.message);
@@ -57,7 +57,7 @@ export default function SignInPage({ prop, setUser }) {
               <Input id="2" name="email" value={authInputs.email} onChange={changeHandler} placeholder="email" type="email" w={'380px'} rounded={'50px'} marginTop={'15px'} marginBottom={'15px'} />
               <Input id="3" name="password" value={authInputs.password} onChange={changeHandler} placeholder="Пароль" w={'380px'} rounded={'50px'} type="password" marginBottom={'15px'} />
               {prop === 'login' ? (
-                <NavLink to="/registration" marginBottom={'10px'} style={{ fontFamily: 'Roboto Condensed', fontSize: '20px' }}>
+                <NavLink to="/registration" mb={'10px'} style={{ fontFamily: 'Roboto Condensed', fontSize: '20px' }}>
                   Регистрация
                 </NavLink>
               ) : (
