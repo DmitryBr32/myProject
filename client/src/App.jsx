@@ -8,13 +8,13 @@ import SignInPage from './components/pages/SignInPage';
 import MoodboardPage from './components/pages/MoodboardPage';
 //import axios from 'axios';
 import axiosInstance, { setAccessToken } from './utils/axiosInstanse';
-console.log("axiosInstance:", axiosInstance.defaults)
+console.log('axiosInstance:', axiosInstance.defaults);
 // import LoginPage from './components/pages/LoginPage';
 
 //const { VITE_FETCH } = import.meta.env;
 
-function App() {
 
+function App() {
   //const [inputs, setInputs] = useState({ title: "", text: "" });
   //const [entries, setEntries] = useState([]);
 
@@ -22,33 +22,32 @@ function App() {
   const [userId, setUserId] = useState('');
   const [user, setUser] = useState(null);
 
-
+  const authUser = async () => {
+    console.log('Отправляем запрос на /tokens/refresh');
+    const { data } = await axiosInstance.get('/tokens/refresh', { withCredentials: true });
+    if (data) {
+      setUserLogin(data.user.login);
+      setUserId(data.user.id);
+      setUser(data.user);
+      console.log('app', user);
+      console.log('app1', userLogin);
+      setAccessToken(data.accessToken);
+    } else {
+      console.warn('Refresh token недействителен или отсутствует ответ.');
+      setUserLogin(null);
+    }
+  };
 
   useEffect(() => {
-    (async function () {
-      console.log('Отправляем запрос на /tokens/refresh');
-      const { data } = await axiosInstance.get('/tokens/refresh', { withCredentials: true });
-      if (data) {
-        setUserLogin(data.user.login);
-        setUserId(data.user.id);
-        setUser(data.user);
-        console.log('app', user)
-        console.log('app1', userLogin)
-        setAccessToken(data.accessToken);
-      } else {
-        console.warn('Refresh token недействителен или отсутствует ответ.');
-        setUserLogin(null);
-      }
-    })();
+    authUser();
   }, []);
 
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout user={userLogin} setUser={setUserLogin}/>,
+      element: <Layout user={userLogin} setUser={setUserLogin} />,
       errorElement: <ErrorPage />,
       children: [
-     
         {
           path: '/',
           element: <MainPage />,

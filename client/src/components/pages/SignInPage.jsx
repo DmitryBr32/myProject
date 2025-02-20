@@ -63,10 +63,11 @@ export default function SignInPage({ prop, setUser }) {
               ) : (
                 <Input id="4" name="repassword" placeholder="Повторите пароль" type="password" w={'380px'} rounded={'50px'} marginbottom={'15px'} />
               )}
-            
-            <Button type="submit" w={'380px'} rounded={'50px'} m={'5'} style={{ color: 'white', backgroundColor: '#1D0F0F' }}>
-              {prop === 'login' ? 'Войти' : 'Подтвердить'}
-            </Button></Flex>
+
+              <Button type="submit" w={'380px'} rounded={'50px'} m={'5'} style={{ color: 'white', backgroundColor: '#1D0F0F' }}>
+                {prop === 'login' ? 'Войти' : 'Подтвердить'}
+              </Button>
+            </Flex>
           </form>
         </Flex>
       </Box>

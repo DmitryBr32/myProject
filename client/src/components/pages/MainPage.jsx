@@ -6,7 +6,7 @@ export default function MainPage() {
 
   const handleDeleteBoard = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_FETCH}/api/board/7`
+      `${import.meta.env.VITE_FETCH}/api/board/13`
     );
     if (response.status === 200) {
       console.log(response);

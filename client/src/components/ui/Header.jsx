@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import axiosInstance, { setAccessToken } from '../../utils/axiosInstanse';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
@@ -13,6 +13,11 @@ export default function Header({ user, setUser }) {
     setAccessToken('');
     navigate('/login');
   }
+
+    useEffect(() => {
+      
+    }, []);
+  
 
   return (
     <>
