@@ -1,0 +1,33 @@
+.scrollable {
+    overflow: auto;
+    scrollbar-width: thin; /* Делает полосу прокрутки тонкой (Firefox) */
+    scrollbar-color: transparent transparent; /* Скрывает "бегунок" и трек (Firefox) */
+  }
+  
+  /* WebKit (Chrome, Safari) стили */
+  .scrollable::-webkit-scrollbar {
+    width: 5px; /* Уменьшаем ширину полосы */
+    height: 5px; /* для горизонтальной полосы */
+  }
+  
+  .scrollable::-webkit-scrollbar-track {
+    background-color: transparent; /* Прозрачный фон трека */
+    border-radius: 10px; /* Закругляем фон трека */
+  }
+  
+  .scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.3); /* Полупрозрачный серый "бегунок" */
+    border-radius: 10px; /* Закругляем "бегунок" */
+  }
+  
+  .scrollable::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(128, 128, 128, 0.5); /* Более темный "бегунок" при наведении */
+  }
+  
+  .scrollable:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(128, 128, 128, 0.5);
+  }
+  
+  .scrollable::-webkit-scrollbar-corner {
+    background-color: transparent; /* Прозрачный угол */
+  }

@@ -1,11 +1,12 @@
-import { Box, Button, Card, CardBody, CardHeader, Center, Heading, Link, Text } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, Center, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import axiosInstance from '../../utils/axiosInstanse';
 import { Form } from 'react-router-dom';
 
-export default function OneBoard({ prop, setClick }) {
+export default function OneBoard({ prop, setClick, setViewBoard }) {
   //const [reTitle, setReTitle] = useState(false);
   const [titleInput, setTitleInput] = useState('');
+  
 
   const changeHandler = (event) => {
     event.preventDefault();
@@ -39,8 +40,13 @@ export default function OneBoard({ prop, setClick }) {
     }
   }
 
+  const goLinks = (event) => {
+    setViewBoard(true);
+  };
+
   return (
     <Box>
+        
       <Center mb="10px">
         <Link>
           <Heading size="md">{prop[1]}</Heading>
@@ -51,8 +57,8 @@ export default function OneBoard({ prop, setClick }) {
         </Form> */}
       </Center>
       <Card align="center" w="300px" h="300px" rounded={30} _hover={{ outlineColor: '#f0f0f0', outlineStyle: 'auto', backgroundColor: '#FFF0F5' }}>
-        <CardBody>
-          <Text>View a summary of all your customers over the last month.</Text>
+        <CardBody onClick={goLinks}>
+          <Text>Здесь будет красивая картинка</Text>
         </CardBody>
       </Card>
       <Center mt="10px">{prop[2] ? <Button onClick={deleteBoardHandler}>del</Button> : <></>}</Center>

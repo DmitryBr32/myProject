@@ -17,8 +17,17 @@ function checkUserId(req, res, next) {
   if (Number(userId)) {
     next();
   } else {
-    res.status(400).send(`Неверный тип данных для id: ${id}`);
+    res.status(400).send(`Неверный тип данных для id: ${userId}`);
   }
 }
 
-module.exports = { removeXPoweredBy, checkId, checkUserId };
+function checkBoardId(req, res, next) {
+  const { boardId } = req.params;
+  if (Number(boardId)) {
+    next();
+  } else {
+    res.status(400).send(`Неверный тип данных для id: ${boardId}`);
+  }
+}
+
+module.exports = { removeXPoweredBy, checkId, checkUserId, checkBoardId };
