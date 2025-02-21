@@ -50,7 +50,7 @@ function App() {
       children: [
         {
           path: '/',
-          element: <MainPage />,
+          element: <MainPage user={userId}/>,
         },
         {
           path: '/moodboard',

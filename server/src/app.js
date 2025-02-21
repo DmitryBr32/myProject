@@ -7,6 +7,7 @@ const cors = require('cors');
 const tokenRouter = require('./routes/token.router');
 const authRouter = require('./routes/auth.router')
 const boardRouter = require('./routes/board.router');
+const linkRouter = require('./routes/link.router');
 const { removeXPoweredBy } = require('./middlewares/common');
 
 const app = express();
@@ -28,6 +29,7 @@ app.use(removeXPoweredBy)
 app.use('/api/tokens', tokenRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/board', boardRouter);
+app.use('/api/link', linkRouter);
 
 //app.use('/', mainRouter);
 

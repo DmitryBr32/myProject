@@ -2,8 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
       'Boards',
       [
@@ -26,144 +25,164 @@ module.exports = {
         {
           title: 'Home Renovation - Inspiration',
           userId: 5,
-        }
+        },
+        {
+          title: 'Ideas for Summer Vacation',
+          userId: 1,
+        },
+        {
+          title: 'Project Alpha - Brainstorm',
+          userId: 2,
+        },
+        {
+          title: 'Grocery List - Weekly',
+          userId: 3,
+        },
+        {
+          title: 'Coding Resources',
+          userId: 4,
+        },
+        {
+          title: 'Home Renovation - Inspiration',
+          userId: 5,
+        },
       ],
-      {},
+      {}
     );
-    
+
     await queryInterface.bulkInsert(
       'Links',
       [
         {
-          title: 'Color Theory',
-          url: 'https://en.wikipedia.org/wiki/Color_theory',
-          userId: 1,
-          boardId: 1,
+          title: 'IndianRed',
+          hex: '#CD5C5C',
+          userId: 5,
+          boardId: 7,
         },
         {
-          title: 'Linear Algebra',
-          url: 'https://en.wikipedia.org/wiki/Linear_algebra',
-          userId: 2,
+          title: 'LavenderBlush',
+          hex: '#FFF0F5',
+          userId: 3,
           boardId: 2,
         },
         {
-          title: 'Quantum Mechanics',
-          url: 'https://en.wikipedia.org/wiki/Quantum_mechanics',
-          userId: 3,
-          boardId: 3,
+          title: 'MistyRose',
+          hex: '#FFE4E1',
+          userId: 1,
+          boardId: 9,
         },
         {
-          title: 'Computer Science',
-          url: 'https://en.wikipedia.org/wiki/Computer_science',
-          userId: 4,
+          title: 'LightCoral',
+          hex: '#F08080',
+          userId: 2,
           boardId: 4,
         },
         {
-          title: 'Artificial Intelligence',
-          url: 'https://en.wikipedia.org/wiki/Artificial_intelligence',
-          userId: 5,
-          boardId: 5,
-        },
-        {
-          title: 'Italy',
-          url: 'https://en.wikipedia.org/wiki/Italy',
-          userId: 1,
+          title: 'Salmon',
+          hex: '#FA8072',
+          userId: 4,
           boardId: 1,
         },
         {
-          title: 'Game Theory',
-          url: 'https://en.wikipedia.org/wiki/Game_theory',
-          userId: 2,
-          boardId: 2,
-        },
-        {
-          title: 'General relativity',
-          url: 'https://en.wikipedia.org/wiki/General_relativity',
-          userId: 3,
+          title: 'Crimson',
+          hex: '#DC143C',
+          userId: 5,
           boardId: 3,
         },
         {
-          title: 'Data structure',
-          url: 'https://en.wikipedia.org/wiki/Data_structure',
-          userId: 4,
-          boardId: 4,
+          title: 'HotPink',
+          hex: '#FF69B4',
+          userId: 3,
+          boardId: 10,
         },
         {
-          title: 'Machine learning',
-          url: 'https://en.wikipedia.org/wiki/Machine_learning',
-          userId: 5,
+          title: 'Tomato',
+          hex: '#FF6347',
+          userId: 1,
+          boardId: 6,
+        },
+        {
+          title: 'OrangeRed',
+          hex: '#FF4500',
+          userId: 2,
+          boardId: 8,
+        },
+        {
+          title: 'Gold',
+          hex: '#FFD700',
+          userId: 4,
           boardId: 5,
         },
         {
-          title: 'France',
-          url: 'https://en.wikipedia.org/wiki/France',
+          title: 'PaleGoldenRod',
+          hex: '#EEE8AA',
+          userId: 5,
+          boardId: 2,
+        },
+        {
+          title: 'DarkKhaki',
+          hex: '#BDB76B',
+          userId: 3,
+          boardId: 9,
+        },
+        {
+          title: 'LemonChiffon',
+          hex: '#FFFACD',
           userId: 1,
+          boardId: 3,
+        },
+        {
+          title: 'Khaki',
+          hex: '#F0E68C',
+          userId: 2,
+          boardId: 7,
+        },
+        {
+          title: 'PapayaWhip',
+          hex: '#FFEFD5',
+          userId: 4,
           boardId: 1,
         },
         {
-          title: 'Evolutionary biology',
-          url: 'https://en.wikipedia.org/wiki/Evolutionary_biology',
-          userId: 2,
-          boardId: 2,
+          title: 'Moccasin',
+          hex: '#FFE4B5',
+          userId: 5,
+          boardId: 6,
         },
         {
-          title: 'String theory',
-          url: 'https://en.wikipedia.org/wiki/String_theory',
+          title: 'PeachPuff',
+          hex: '#FFDAB9',
           userId: 3,
-          boardId: 3,
-        },
-        {
-          title: 'Algorithm',
-          url: 'https://en.wikipedia.org/wiki/Algorithm',
-          userId: 4,
           boardId: 4,
         },
         {
-          title: 'Deep learning',
-          url: 'https://en.wikipedia.org/wiki/Deep_learning',
-          userId: 5,
-          boardId: 5,
-        },
-         {
-          title: 'Spain',
-          url: 'https://en.wikipedia.org/wiki/Spain',
+          title: 'Bisque',
+          hex: '#FFE4C4',
           userId: 1,
-          boardId: 1,
+          boardId: 10,
         },
         {
-          title: 'Genetics',
-          url: 'https://en.wikipedia.org/wiki/Genetics',
+          title: 'LightSalmon',
+          hex: '#FFA07A',
           userId: 2,
-          boardId: 2,
-        },
-        {
-          title: 'Time travel',
-          url: 'https://en.wikipedia.org/wiki/Time_travel',
-          userId: 3,
-          boardId: 3,
-        },
-        {
-          title: 'Operating system',
-          url: 'https://en.wikipedia.org/wiki/Operating_system',
-          userId: 4,
-          boardId: 4,
-        },
-        {
-          title: 'Neural network',
-          url: 'https://en.wikipedia.org/wiki/Neural_network',
-          userId: 5,
           boardId: 5,
+        },
+        {
+          title: 'Coral',
+          hex: '#FF7F50',
+          userId: 4,
+          boardId: 8,
         },
       ],
-      {},
+      {}
     );
-  }
-  async down (queryInterface, Sequelize) {
+  },
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };

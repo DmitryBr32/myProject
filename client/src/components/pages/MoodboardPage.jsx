@@ -46,7 +46,7 @@ export default function MoodboardPage({ user }) {
   return (
     <div>
       <Flex>
-      {viewBoard ? (<Box w="75%" h="auto"><Linkes setViewBoard={setViewBoard}/></Box>):(<></>)}
+      {viewBoard ? (<Box w="75%" h="auto"><Linkes user={user} setViewBoard={setViewBoard}/></Box>):(<></>)}
       
         <Box w={viewBoard ? "25%" : "100%"} overflowY="auto" maxHeight="100vh"  m={10} className='scrollable'>
           <Wrap spacing="30px" templateColumns="repeat(4, 1fr)" gap={6}>

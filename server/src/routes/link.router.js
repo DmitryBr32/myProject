@@ -53,9 +53,9 @@ router.get('/:id', checkId, async (req, res) => {
 
 //Добавить линк
 router.post('/new', async (req, res) => {
-  const { title, url, userId, boardId } = req.body;
+  const { title, hex, userId, boardId } = req.body;
   try {
-    const newBoard = await Link.create({ title, url, userId, boardId });
+    const newBoard = await Link.create({ title, hex, userId, boardId });
     res.status(201).json(newBoard);
   } catch (error) {
     console.log(error);
@@ -83,9 +83,9 @@ router.delete('/:id', checkId, async (req, res) => {
 
 router.put('/:id', checkId, async (req, res) => {
   const { id } = req.params;
-  const { title, url, userId, boardId } = req.body;
+  const { title, hex } = req.body;
   try {
-    const updateTitle = await Link.update({ title, url, userId, boardId }, { where: { id } });
+    const updateTitle = await Link.update({ title, hex }, { where: { id } });
     res.status(201).json(updateTitle);
   } catch (error) {
     console.log(error);

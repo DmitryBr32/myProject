@@ -1,7 +1,6 @@
 import { Box, Button, Card, CardBody, CardHeader, Center, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import axiosInstance from '../../utils/axiosInstanse';
-import { Form } from 'react-router-dom';
 
 export default function OneBoard({ prop, setClick, setViewBoard }) {
   //const [reTitle, setReTitle] = useState(false);
@@ -46,7 +45,7 @@ export default function OneBoard({ prop, setClick, setViewBoard }) {
 
   return (
     <Box>
-        
+
       <Center mb="10px">
         <Link>
           <Heading size="md">{prop[1]}</Heading>

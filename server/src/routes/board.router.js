@@ -71,10 +71,10 @@ router.delete('/:id', checkId, async (req, res) => {
 
 router.put('/:id', checkId, async (req, res) => {
   const { id } = req.params;
-  const { title, userId } = req.body;
+  const { title } = req.body;
   try {
     const updateTitle = await Board.update(
-      { title, userId },
+      { title },
       { where: { id } },
     );
     res.status(201).json(updateTitle);

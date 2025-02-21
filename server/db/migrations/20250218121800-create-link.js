@@ -12,7 +12,7 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      url: {
+      hex: {
         type: Sequelize.STRING,
         allowNull: false,
       },

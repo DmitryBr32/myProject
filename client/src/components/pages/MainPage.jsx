@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import OneBoard from '../ui/OneBoard';
 import ColorBoard from '../ui/ColorBoard';
 
-export default function MainPage() {
+export default function MainPage({user}) {
   const [colors, setColors] = useState([]);
 
   // useEffect(() => {
@@ -37,7 +37,7 @@ export default function MainPage() {
       <Button onClick={getColorsHandle}>Цвет</Button>
       <Wrap m={10} spacing="30px" templateColumns="repeat(4, 1fr)" gap={6}>
         {colors.map((color) => (
-          <ColorBoard key={color.name} prop={[color.name, color.hex, color.rgb]} />
+          <ColorBoard key={color.name} prop={[color.name, color.hex, color.rgb]} user={user} />
         ))}
       </Wrap>
     </>

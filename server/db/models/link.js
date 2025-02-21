@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   Link.init(
     {
       title: DataTypes.STRING,
-      url: DataTypes.STRING,
+      hex: DataTypes.STRING,
       userId: DataTypes.INTEGER,
       boardId: DataTypes.INTEGER,
     },

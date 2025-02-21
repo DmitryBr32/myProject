@@ -3,6 +3,8 @@ require('dotenv').config();
 module.exports = {
   development: {
     use_env_variable: 'DB',
+    seederStorage: 'sequelize',
+    seederStorageTableName: 'SequelizeData',
   },
   test: {
     use_env_variable: 'DB',
